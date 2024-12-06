@@ -7,7 +7,7 @@ import os
 
 #======= globals =======#
 
-ext_file_rel: dict[str, str] = {
+RELS: dict[str, str] = {
     "py": "Python Code",
     "cpp": "Cpp Code",
     "txt": "Documents",
@@ -41,6 +41,8 @@ ext_file_rel: dict[str, str] = {
 
 #======= classes =======#
 
+pass
+
 #======= functions =======#
 
 def extof(file_path: str) -> str | None:
@@ -69,7 +71,7 @@ def mvtocat(file_path: str, base_path) -> None:
         return
 
     # if there is no relationship for the extension in ext_file_rel
-    if (file_category := ext_file_rel.get(file_extension)) is None:
+    if (file_category := RELS.get(file_extension)) is None:
         print(f"There is no relation for {file_extension=}...")
         return
 
