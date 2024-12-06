@@ -1,0 +1,5 @@
+# ignoring the venv
+venv/
+
+# ignoring the executable files
+*exe
