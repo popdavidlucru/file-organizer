@@ -60,6 +60,14 @@ def extof(file_path: str) -> str | None:
     return file_path.split(".")[-1] if "." in file_path else None
 
 def mvtocat(file_path: str, base_path) -> None:
+    """
+    Moves the given file to its corresponding folder using RELS.
+    If the folder has not yet been created, it will create it and fill it.
+    
+    :param file_path: The path of the file that needs to be moved to the category
+    :type file_path: str
+    """
+    
     # if the provided file does not exist
     if not os.path.exists(file_path):
         print(f"The provided file does not exist or is at another location... {file_path=}")
