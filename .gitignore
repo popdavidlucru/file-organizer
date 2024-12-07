@@ -1,4 +1,6 @@
 venv/
-main.exe
-__pycache__
+__pycache__/
 temp/
+build/
+main.spec
+main.exe

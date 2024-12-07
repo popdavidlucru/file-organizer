@@ -1,12 +1,35 @@
 #======= imports =======#
 import os
+import sys
 import json
 #======= globals =======#
-with open(r"Data\config.json", "r") as open_file:
-    config = json.load(open_file)
+# WHAT THE FUCK????
+if getattr(sys, 'frozen', False):
+    base_path = sys._MEIPASS  # This is where PyInstaller unpacks files when running the exe
+else:
+    base_path = os.path.dirname(os.path.abspath(__file__))  # For normal script execution
 
+# Build the path to the config.json file
+json_file_path = os.path.join(base_path, 'config.json')
+
+# Load and return the JSON data
+try:
+    with open(json_file_path, "r") as open_file:
+        config = json.load(open_file)
+    
     RELS: dict[str, str] = config["categories"]
     BASE = config["base"].replace("{HOME}", os.path.expanduser("~"))
+
+except FileNotFoundError:
+    print(f"Error: {json_file_path} not found.")
+    sys.exit(1)
+except json.JSONDecodeError:
+    print(f"Error: {json_file_path} contains invalid JSON.")
+    sys.exit(1)
+except KeyError as e:
+    print(f"Error: Missing expected key in {json_file_path}: {e}")
+    sys.exit(1)
+
 #======= classes =======#
 class File:
     def __init__(self, path: str):
