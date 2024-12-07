@@ -1,0 +1,35 @@
+{
+    "base": "{HOME}/Desktop",
+    "categories": {
+        "py": "Python Code",
+        "cpp": "Cpp Code",
+        "txt": "Documents",
+        "doc": "Documents",
+        "docx": "Documents",
+        "xls": "Spreadsheets",
+        "xlsx": "Spreadsheets",
+        "ppt": "Presentations",
+        "pptx": "Presentations",
+        "pdf": "Documents",
+        "jpg": "Images",
+        "png": "Images",
+        "gif": "Images",
+        "mp3": "Audio",
+        "wav": "Audio",
+        "ogg": "Audio",
+        "mp4": "Videos",
+        "mkv": "Videos",
+        "mov": "Videos",
+        "avi": "Videos",
+        "zip": "Archives",
+        "rar": "Archives",
+        "7z": "Archives",
+        "csv": "Data Files",
+        "json": "Data Files",
+        "xml": "Data Files",
+        "html": "Web Files",
+        "css": "Web Files",
+        "js": "Web Files"
+    }
+}
+
